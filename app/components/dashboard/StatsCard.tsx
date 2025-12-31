@@ -16,7 +16,7 @@ export default function StatsCard({
   color,
 }: StatsCardProps) {
   return (
-    <Card className="bg-card-light dark:bg-card-dark backdrop-blur-md border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 group">
+    <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 group">
       <CardBody className="p-6">
         <div className="flex items-start justify-between mb-4">
           <div

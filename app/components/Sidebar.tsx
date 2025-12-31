@@ -13,9 +13,9 @@ export default function Sidebar() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <div className="fixed left-0 top-0 h-screen w-72 bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-slate-900 backdrop-blur-xl border-r border-slate-200 dark:border-slate-800 shadow-2xl z-50 flex flex-col transition-all duration-300">
+    <div className="fixed left-0 top-0 h-screen w-72 bg-white dark:bg-slate-900 backdrop-blur-xl border-r border-slate-200 dark:border-slate-800 shadow-2xl z-50 flex flex-col transition-all duration-300">
       {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 dark:from-blue-500/10 dark:via-transparent dark:to-purple-500/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-purple-500/5 dark:from-blue-500/10 dark:to-purple-500/10 pointer-events-none" />
 
       <SidebarLogo />
 
@@ -28,7 +28,7 @@ export default function Sidebar() {
             className={`w-full justify-start h-12 text-base font-medium transition-all duration-300 ${
               isActive(item.path)
                 ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg shadow-blue-500/30 scale-105 hover:shadow-blue-500/50"
-                : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/50 hover:scale-102"
+                : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-102"
             }`}
             startContent={
               <span

@@ -31,10 +31,10 @@ export default function SettingsPage() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 shadow-xl transition-colors duration-300"
+          className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl transition-colors duration-300"
         >
           <div className="px-8 py-6">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-1">
+            <h1 className="text-3xl font-bold bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-1">
               Settings
             </h1>
             <p className="text-slate-600 dark:text-slate-400 text-sm font-medium">
@@ -50,7 +50,7 @@ export default function SettingsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-white/10 transition-colors duration-300">
+            <Card className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700 transition-colors duration-300">
               <CardBody className="p-6">
                 <Tabs
                   aria-label="Settings tabs"
@@ -58,8 +58,8 @@ export default function SettingsPage() {
                   variant="underlined"
                   classNames={{
                     tabList:
-                      "gap-6 border-b border-slate-200 dark:border-white/10",
-                    cursor: "bg-gradient-to-r from-blue-500 to-purple-500",
+                      "gap-6 border-b border-slate-200 dark:border-slate-700",
+                    cursor: "bg-linear-to-r from-blue-500 to-purple-500",
                     tab: "text-slate-600 dark:text-slate-400 data-[hover=true]:text-slate-900 dark:data-[hover=true]:text-white",
                     tabContent:
                       "group-data-[selected=true]:text-slate-900 dark:group-data-[selected=true]:text-white font-semibold",
@@ -101,7 +101,7 @@ export default function SettingsPage() {
                             classNames={{
                               input: "text-slate-900 dark:text-white",
                               inputWrapper:
-                                "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                                "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                             }}
                           />
                         </div>
@@ -116,7 +116,7 @@ export default function SettingsPage() {
                             classNames={{
                               input: "text-slate-900 dark:text-white",
                               inputWrapper:
-                                "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                                "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                             }}
                           />
                         </div>
@@ -134,7 +134,7 @@ export default function SettingsPage() {
                           classNames={{
                             input: "text-slate-900 dark:text-white",
                             inputWrapper:
-                              "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                              "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                           }}
                         />
                       </div>
@@ -150,14 +150,14 @@ export default function SettingsPage() {
                           classNames={{
                             input: "text-slate-900 dark:text-white",
                             inputWrapper:
-                              "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                              "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                           }}
                         />
                       </div>
 
                       <Button
                         size="lg"
-                        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg transition-all"
+                        className="bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg transition-all"
                         startContent={<Save className="w-4 h-4" />}
                       >
                         Save Changes
@@ -201,7 +201,7 @@ export default function SettingsPage() {
                           classNames={{
                             input: "text-slate-900 dark:text-white",
                             inputWrapper:
-                              "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                              "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                           }}
                         />
                       </div>
@@ -218,7 +218,7 @@ export default function SettingsPage() {
                           classNames={{
                             input: "text-slate-900 dark:text-white",
                             inputWrapper:
-                              "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                              "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                           }}
                         />
                       </div>
@@ -235,14 +235,14 @@ export default function SettingsPage() {
                           classNames={{
                             input: "text-slate-900 dark:text-white",
                             inputWrapper:
-                              "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                              "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                           }}
                         />
                       </div>
 
                       <Button
                         size="lg"
-                        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg transition-all"
+                        className="bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg transition-all"
                         startContent={<Lock className="w-4 h-4" />}
                       >
                         Update Password
@@ -275,7 +275,7 @@ export default function SettingsPage() {
                       </div>
 
                       <div className="space-y-4">
-                        <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10 transition-all">
+                        <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all">
                           <div>
                             <h3 className="text-slate-900 dark:text-white font-semibold flex items-center gap-2">
                               <Bell className="w-4 h-4" />
@@ -293,7 +293,7 @@ export default function SettingsPage() {
                           />
                         </div>
 
-                        <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10 transition-all">
+                        <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all">
                           <div>
                             <h3 className="text-slate-900 dark:text-white font-semibold">
                               Email Alerts
@@ -309,7 +309,7 @@ export default function SettingsPage() {
                           />
                         </div>
 
-                        <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10 transition-all">
+                        <div className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all">
                           <div>
                             <h3 className="text-slate-900 dark:text-white font-semibold">
                               Auto Save
@@ -335,11 +335,11 @@ export default function SettingsPage() {
                             variant="bordered"
                             size="lg"
                             startContent={
-                              <Globe className="w-4 h-4 text-slate-700 dark:text-slate-100" />
+                              <Globe className="w-4 h-4 text-slate-700 dark:text-slate-300" />
                             }
                             classNames={{
                               trigger:
-                                "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                                "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                               value: "text-slate-900 dark:text-white",
                             }}
                           >
@@ -363,7 +363,7 @@ export default function SettingsPage() {
                             size="lg"
                             classNames={{
                               trigger:
-                                "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                                "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                               value: "text-slate-900 dark:text-white",
                             }}
                           >
@@ -391,7 +391,7 @@ export default function SettingsPage() {
 
                       <Button
                         size="lg"
-                        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg transition-all"
+                        className="bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold hover:shadow-lg transition-all"
                         startContent={<Save className="w-4 h-4" />}
                       >
                         Save Preferences

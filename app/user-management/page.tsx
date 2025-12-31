@@ -38,10 +38,7 @@ import {
   Filter,
   Bell,
   Settings as SettingsIcon,
-  Sun,
-  Moon,
 } from "lucide-react";
-import { useTheme } from "next-themes";
 
 export default function UserManagementPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -51,7 +48,6 @@ export default function UserManagementPage() {
     email: "",
     role: "User",
   });
-  const { theme, setTheme, resolvedTheme } = useTheme();
 
   const users = [
     {
@@ -137,12 +133,12 @@ export default function UserManagementPage() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 shadow-xl transition-colors duration-300"
+          className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl transition-colors duration-300"
         >
           <div className="px-8 py-6">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-1">
+                <h1 className="text-3xl font-bold bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-1">
                   User Management
                 </h1>
                 <p className="text-slate-600 dark:text-slate-400 text-sm font-medium">
@@ -155,46 +151,30 @@ export default function UserManagementPage() {
                   <Button
                     isIconOnly
                     variant="flat"
-                    className="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 hover:scale-110 transition-all"
+                    className="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:scale-110 transition-all"
                   >
                     <Bell className="w-5 h-5 text-slate-600 dark:text-slate-300" />
                   </Button>
                 </Badge>
 
-                {/* Dark Mode Toggle Button */}
-                <Button
-                  isIconOnly
-                  variant="flat"
-                  className="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 hover:scale-110 transition-all"
-                  onPress={() =>
-                    setTheme(resolvedTheme === "dark" ? "light" : "dark")
-                  }
-                >
-                  {resolvedTheme === "dark" ? (
-                    <Sun className="w-5 h-5 text-slate-600 dark:text-slate-300" />
-                  ) : (
-                    <Moon className="w-5 h-5 text-slate-600 dark:text-slate-300" />
-                  )}
-                </Button>
-
                 {/* Settings Button */}
                 <Button
                   isIconOnly
                   variant="flat"
-                  className="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 hover:scale-110 transition-all"
+                  className="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:scale-110 transition-all"
                 >
                   <SettingsIcon className="w-5 h-5 text-slate-600 dark:text-slate-300" />
                 </Button>
 
                 <Button
                   variant="flat"
-                  className="bg-slate-400 dark:bg-slate-800/50 border border-slate-900 dark:border-white/10"
+                  className="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300"
                   startContent={<Filter className="w-4 h-4" />}
                 >
                   Filter
                 </Button>
                 <Button
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg shadow-blue-500/30"
+                  className="bg-linear-to-r from-blue-600 to-purple-600 text-white font-semibold shadow-lg shadow-blue-500/30"
                   startContent={<Plus className="w-4 h-4" />}
                   onPress={onOpen}
                 >
@@ -241,7 +221,7 @@ export default function UserManagementPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 transition-all">
+                <Card className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all">
                   <CardBody className="p-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -253,7 +233,7 @@ export default function UserManagementPage() {
                         </p>
                       </div>
                       <div
-                        className={`p-3 rounded-xl bg-gradient-to-br ${stat.color}`}
+                        className={`p-3 rounded-xl bg-linear-to-br ${stat.color}`}
                       >
                         <stat.icon className="w-6 h-6 text-white" />
                       </div>
@@ -270,7 +250,7 @@ export default function UserManagementPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Card className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-white/10">
+            <Card className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700">
               <CardBody className="p-6">
                 {/* Search Bar */}
                 <div className="mb-6">
@@ -280,11 +260,13 @@ export default function UserManagementPage() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     variant="bordered"
                     size="lg"
-                    startContent={<Search className="w-4 h-4 text-slate-400" />}
+                    startContent={
+                      <Search className="w-4 h-4 text-slate-400 dark:text-slate-500" />
+                    }
                     classNames={{
                       input: "text-slate-900 dark:text-white",
                       inputWrapper:
-                        "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                        "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                     }}
                   />
                 </div>
@@ -294,8 +276,8 @@ export default function UserManagementPage() {
                   aria-label="Users table"
                   classNames={{
                     wrapper: "bg-transparent shadow-none",
-                    th: "bg-slate-100 dark:bg-slate-800/50 text-slate-700 dark:text-slate-300 font-semibold",
-                    td: "text-slate-700 dark:text-slate-200",
+                    th: "bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-semibold",
+                    td: "text-slate-700 dark:text-slate-300",
                   }}
                 >
                   <TableHeader>
@@ -310,7 +292,7 @@ export default function UserManagementPage() {
                     {filteredUsers.map((user) => (
                       <TableRow
                         key={user.id}
-                        className="hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+                        className="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors"
                       >
                         <TableCell>
                           <div className="flex items-center gap-3">
@@ -370,19 +352,19 @@ export default function UserManagementPage() {
                             >
                               <DropdownItem
                                 key="view"
-                                className="text-slate-900 dark:text-white"
+                                className="text-slate-900 dark:text-slate-100"
                               >
                                 View Profile
                               </DropdownItem>
                               <DropdownItem
                                 key="edit"
-                                className="text-slate-900 dark:text-white"
+                                className="text-slate-900 dark:text-slate-100"
                               >
                                 Edit User
                               </DropdownItem>
                               <DropdownItem
                                 key="permissions"
-                                className="text-slate-900 dark:text-white"
+                                className="text-slate-900 dark:text-slate-100"
                               >
                                 Manage Permissions
                               </DropdownItem>
@@ -402,7 +384,7 @@ export default function UserManagementPage() {
                 </Table>
 
                 {/* Footer */}
-                <div className="flex items-center justify-between mt-6 pt-6 border-t border-slate-200 dark:border-white/10">
+                <div className="flex items-center justify-between mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
                   <p className="text-sm text-slate-600 dark:text-slate-400">
                     Showing{" "}
                     <span className="font-semibold text-slate-900 dark:text-white">
@@ -418,7 +400,7 @@ export default function UserManagementPage() {
                     <Button
                       size="sm"
                       variant="flat"
-                      className="bg-slate-100 dark:bg-slate-800"
+                      className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
                     >
                       Previous
                     </Button>
@@ -428,14 +410,14 @@ export default function UserManagementPage() {
                     <Button
                       size="sm"
                       variant="flat"
-                      className="bg-slate-100 dark:bg-slate-800"
+                      className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
                     >
                       2
                     </Button>
                     <Button
                       size="sm"
                       variant="flat"
-                      className="bg-slate-100 dark:bg-slate-800"
+                      className="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
                     >
                       Next
                     </Button>
@@ -458,7 +440,7 @@ export default function UserManagementPage() {
           backdrop: "bg-[#80808080] backdrop-blur-sm",
         }}
       >
-        <ModalContent className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg w-[600px]">
+        <ModalContent className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg max-w-xl">
           {(onClose) => (
             <>
               {/* HEADER */}
@@ -484,7 +466,7 @@ export default function UserManagementPage() {
                     classNames={{
                       input: "text-slate-900 dark:text-white text-sm",
                       inputWrapper:
-                        "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 min-h-[42px]",
+                        "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 min-h-[42px]",
                     }}
                   />
                 </div>
@@ -504,7 +486,7 @@ export default function UserManagementPage() {
                     classNames={{
                       input: "text-slate-900 dark:text-white text-sm",
                       inputWrapper:
-                        "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 min-h-[42px]",
+                        "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 min-h-[42px]",
                     }}
                   />
                 </div>
@@ -523,7 +505,7 @@ export default function UserManagementPage() {
                     classNames={{
                       input: "text-slate-900 dark:text-white text-sm",
                       inputWrapper:
-                        "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 min-h-[42px]",
+                        "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 min-h-[42px]",
                     }}
                   />
                 </div>

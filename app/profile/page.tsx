@@ -69,7 +69,7 @@ function ProfileContent() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 shadow-xl transition-colors duration-300"
+          className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl transition-colors duration-300"
         >
           <div className="px-8 py-6">
             <div className="flex items-center justify-between">
@@ -100,15 +100,15 @@ function ProfileContent() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-white/10 transition-colors duration-300">
-              <CardHeader className="border-b border-slate-200 dark:border-white/10 px-8 py-6">
+            <Card className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700 transition-colors duration-300">
+              <CardHeader className="border-b border-slate-200 dark:border-slate-700 px-8 py-6">
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
                   Account Information
                 </h2>
               </CardHeader>
               <CardBody className="p-8">
                 {/* Profile Header */}
-                <div className="flex items-center gap-6 mb-8 pb-8 border-b border-slate-200 dark:border-white/10">
+                <div className="flex items-center gap-6 mb-8 pb-8 border-b border-slate-200 dark:border-slate-700">
                   <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
@@ -169,7 +169,7 @@ function ProfileContent() {
                       classNames={{
                         input: "text-slate-900 dark:text-white font-medium",
                         inputWrapper:
-                          "bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/5",
+                          "bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700",
                       }}
                     />
                   </motion.div>
@@ -193,7 +193,7 @@ function ProfileContent() {
                       classNames={{
                         input: "text-slate-900 dark:text-white font-medium",
                         inputWrapper:
-                          "bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/5",
+                          "bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700",
                       }}
                     />
                   </motion.div>
@@ -216,7 +216,7 @@ function ProfileContent() {
                       classNames={{
                         input: "text-slate-900 dark:text-white font-medium",
                         inputWrapper:
-                          "bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/5",
+                          "bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700",
                       }}
                     />
                   </motion.div>
@@ -239,7 +239,7 @@ function ProfileContent() {
                       classNames={{
                         input: "text-slate-900 dark:text-white font-medium",
                         inputWrapper:
-                          "bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/5",
+                          "bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700",
                       }}
                     />
                   </motion.div>
@@ -250,13 +250,13 @@ function ProfileContent() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.9 }}
-                  className="mt-8 pt-8 border-t border-slate-200 dark:border-white/10"
+                  className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700"
                 >
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4">
                     Account Statistics
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/30 border border-slate-200 dark:border-white/5">
+                    <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
                       <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
                         Member Since
                       </p>
@@ -264,7 +264,7 @@ function ProfileContent() {
                         Jan 2024
                       </p>
                     </div>
-                    <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/30 border border-slate-200 dark:border-white/5">
+                    <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
                       <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
                         Last Login
                       </p>
@@ -272,7 +272,7 @@ function ProfileContent() {
                         Today, 10:30 AM
                       </p>
                     </div>
-                    <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-800/30 border border-slate-200 dark:border-white/5">
+                    <div className="p-4 rounded-xl bg-slate-100 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700">
                       <p className="text-sm text-slate-600 dark:text-slate-400 mb-1">
                         Total Sessions
                       </p>
@@ -290,10 +290,10 @@ function ProfileContent() {
 
       {/* Edit Profile Modal */}
       <Modal isOpen={isOpen} onClose={handleCancel} size="2xl" backdrop="blur">
-        <ModalContent className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+        <ModalContent className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1 border-b border-slate-200 dark:border-white/10">
+              <ModalHeader className="flex flex-col gap-1 border-b border-slate-200 dark:border-slate-700">
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                   Edit Profile
                 </h3>
@@ -317,7 +317,7 @@ function ProfileContent() {
                     classNames={{
                       input: "text-slate-900 dark:text-white",
                       inputWrapper:
-                        "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10",
+                        "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700",
                       label: "text-slate-700 dark:text-slate-300 font-medium",
                     }}
                   />
@@ -337,7 +337,7 @@ function ProfileContent() {
                     classNames={{
                       input: "text-slate-900 dark:text-white",
                       inputWrapper:
-                        "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10",
+                        "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700",
                       label: "text-slate-700 dark:text-slate-300 font-medium",
                     }}
                   />
@@ -356,7 +356,7 @@ function ProfileContent() {
                     classNames={{
                       input: "text-slate-900 dark:text-white",
                       inputWrapper:
-                        "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10",
+                        "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700",
                       label: "text-slate-700 dark:text-slate-300 font-medium",
                     }}
                   />
@@ -377,18 +377,18 @@ function ProfileContent() {
                     classNames={{
                       input: "text-slate-900 dark:text-white",
                       inputWrapper:
-                        "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10",
+                        "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700",
                       label: "text-slate-700 dark:text-slate-300 font-medium",
                     }}
                   />
                 </div>
               </ModalBody>
-              <ModalFooter className="border-t border-slate-200 dark:border-white/10">
+              <ModalFooter className="border-t border-slate-200 dark:border-slate-700">
                 <Button
                   variant="flat"
                   onPress={handleCancel}
                   size="lg"
-                  className="bg-slate-100 dark:bg-slate-800/50 text-slate-900 dark:text-white"
+                  className="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
                   startContent={<X className="w-4 h-4" />}
                 >
                   Cancel
