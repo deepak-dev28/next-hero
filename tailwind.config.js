@@ -8,6 +8,7 @@ export default {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@heroui/theme/dist/**/*.{js,ts,jsx}'
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       animation: {
@@ -22,7 +23,6 @@ export default {
       }
     },
   },
-  darkMode: ["class"],
   plugins: [
     heroui({
       addCommonColors: true,

@@ -20,32 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="h-full">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  var theme = localStorage.getItem('theme') || 'system';
-                  var effectiveTheme = theme;
-                  
-                  if (theme === 'system') {
-                    effectiveTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                  }
-                  
-                  var root = document.documentElement;
-                  if (effectiveTheme === 'dark') {
-                    root.classList.add('dark');
-                  } else {
-                    root.classList.remove('dark');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
-      </head>
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased min-h-full`}>
         <Providers>{children}</Providers>
       </body>

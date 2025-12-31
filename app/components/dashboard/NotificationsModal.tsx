@@ -16,7 +16,10 @@ interface NotificationsModalProps {
   onClose: () => void;
 }
 
-export default function NotificationsModal({ isOpen, onClose }: NotificationsModalProps) {
+export default function NotificationsModal({
+  isOpen,
+  onClose,
+}: NotificationsModalProps) {
   const notifications = [
     {
       id: 1,
@@ -74,13 +77,18 @@ export default function NotificationsModal({ isOpen, onClose }: NotificationsMod
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="2xl" className="dark">
-      <ModalContent className="bg-gradient-to-br from-slate-800 to-slate-900 border border-white/10">
-        <ModalHeader className="flex items-center gap-3 border-b border-white/10">
-          <Bell className="w-5 h-5 text-blue-400" />
+    <Modal isOpen={isOpen} onClose={onClose} size="2xl">
+      <ModalContent className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+        <ModalHeader className="flex items-center gap-3 border-b border-slate-200 dark:border-slate-700">
+          <Bell className="w-5 h-5 text-blue-600 dark:text-blue-400" />
           <div>
-            <h3 className="text-xl font-bold text-white">Notifications</h3>
-            <p className="text-sm text-slate-400 font-normal">You have {notifications.filter(n => !n.read).length} unread notifications</p>
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+              Notifications
+            </h3>
+            <p className="text-sm text-slate-600 dark:text-slate-400 font-normal">
+              You have {notifications.filter((n) => !n.read).length} unread
+              notifications
+            </p>
           </div>
         </ModalHeader>
         <ModalBody className="py-4">
@@ -90,17 +98,21 @@ export default function NotificationsModal({ isOpen, onClose }: NotificationsMod
                 key={notification.id}
                 className={`p-4 rounded-xl border transition-all hover:scale-102 cursor-pointer ${
                   notification.read
-                    ? "bg-slate-800/30 border-white/5"
-                    : "bg-slate-800/50 border-blue-500/30"
+                    ? "bg-slate-50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-700"
+                    : "bg-blue-50 dark:bg-blue-900/20 border-blue-500/30 dark:border-blue-500/50"
                 }`}
               >
                 <div className="flex items-start gap-3">
-                  <div className={`p-2 rounded-lg border ${getTypeColor(notification.type)}`}>
-                    <Bell className="w-4 h-4 text-white" />
+                  <div
+                    className={`p-2 rounded-lg border ${getTypeColor(
+                      notification.type
+                    )}`}
+                  >
+                    <Bell className="w-4 h-4 text-slate-700 dark:text-slate-300" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-start justify-between gap-2">
-                      <h4 className="font-semibold text-white text-sm">
+                      <h4 className="font-semibold text-slate-900 dark:text-white text-sm">
                         {notification.title}
                       </h4>
                       {!notification.read && (
@@ -109,10 +121,10 @@ export default function NotificationsModal({ isOpen, onClose }: NotificationsMod
                         </Chip>
                       )}
                     </div>
-                    <p className="text-sm text-slate-400 mt-1">
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
                       {notification.message}
                     </p>
-                    <p className="text-xs text-slate-500 mt-2">
+                    <p className="text-xs text-slate-500 dark:text-slate-500 mt-2">
                       {notification.time}
                     </p>
                   </div>
@@ -121,10 +133,10 @@ export default function NotificationsModal({ isOpen, onClose }: NotificationsMod
             ))}
           </div>
         </ModalBody>
-        <ModalFooter className="border-t border-white/10 gap-2">
+        <ModalFooter className="border-t border-slate-200 dark:border-slate-700 gap-2">
           <Button
             variant="flat"
-            className="bg-slate-800/50"
+            className="bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white"
             startContent={<CheckCheck className="w-4 h-4" />}
           >
             Mark all as read

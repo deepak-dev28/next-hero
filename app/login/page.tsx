@@ -27,10 +27,10 @@ export default function LoginPage() {
       <div className="relative z-10 w-full max-w-md">
         {/* Logo and Brand */}
         <div className="text-center mb-6 sm:mb-8 animate-float">
-          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 shadow-2xl shadow-blue-500/50 mb-3 sm:mb-4">
+          <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-linear-to-br from-blue-600 via-purple-600 to-pink-600 shadow-2xl shadow-blue-500/50 mb-3 sm:mb-4">
             <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
+          <h1 className="text-3xl sm:text-4xl font-bold bg-linear-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
             Welcome Back
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-sm">

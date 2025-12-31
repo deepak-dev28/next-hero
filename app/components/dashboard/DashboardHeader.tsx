@@ -11,15 +11,14 @@ import {
   DropdownItem,
   useDisclosure,
 } from "@heroui/react";
-import { Search, Bell, Settings, User, LogOut, Sun, Moon } from "lucide-react";
+import { Search, Bell, Settings, User, LogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
 import NotificationsModal from "./NotificationsModal";
-import { useTheme } from "next-themes";
+import ThemeToggle from "../ThemeToggle";
 
 export default function DashboardHeader() {
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { setTheme, resolvedTheme } = useTheme();
 
   const handleSettings = () => {
     router.push("/settings");
@@ -27,7 +26,7 @@ export default function DashboardHeader() {
 
   return (
     <>
-      <div className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-white/10 shadow-xl transition-colors duration-300">
+      <div className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl transition-colors duration-300">
         <div className="px-6 sm:px-8 py-4">
           <div className="flex items-center justify-between gap-4">
             {/* Left section - Title and Greeting */}
@@ -44,12 +43,14 @@ export default function DashboardHeader() {
             <div className="hidden md:flex flex-1 max-w-md">
               <Input
                 placeholder="Search anything..."
-                startContent={<Search className="w-4 h-4 text-slate-400" />}
+                startContent={
+                  <Search className="w-4 h-4 text-slate-400 dark:text-slate-500" />
+                }
                 classNames={{
                   input:
-                    "text-slate-900 dark:text-white placeholder:text-slate-500",
+                    "text-slate-900 dark:text-white placeholder:text-slate-500 dark:placeholder:text-slate-400",
                   inputWrapper:
-                    "bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 transition-all",
+                    "bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all",
                 }}
               />
             </div>
@@ -57,12 +58,12 @@ export default function DashboardHeader() {
             {/* Right section - Actions and Date */}
             <div className="flex items-center gap-2 sm:gap-4">
               {/* Date Display */}
-              <div className="hidden lg:flex flex-col items-end px-3 sm:px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/10">
+              <div className="hidden lg:flex flex-col items-end px-3 sm:px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
                 <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
                   Today
                 </p>
                 <p className="text-sm text-slate-900 dark:text-white font-semibold">
-                  Dec 29, 2025
+                  Dec 30, 2025
                 </p>
               </div>
 
@@ -73,38 +74,27 @@ export default function DashboardHeader() {
                   <Button
                     isIconOnly
                     variant="flat"
-                    className="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 hover:scale-110 transition-all"
+                    className="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:scale-110 transition-all"
                     onPress={onOpen}
                   >
                     <Bell className="w-5 h-5 text-slate-600 dark:text-slate-300" />
                   </Button>
                 </Badge>
 
-                {/* Dark Mode Toggle Button */}
-                <Button
-                  isIconOnly
-                  variant="flat"
-                  className="bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 hover:scale-110 transition-all"
-                  onPress={() =>
-                    setTheme(resolvedTheme === "dark" ? "light" : "dark")
-                  }
-                >
-                  {resolvedTheme === "dark" ? (
-                    <Sun className="w-5 h-5 text-slate-600 dark:text-slate-300" />
-                  ) : (
-                    <Moon className="w-5 h-5 text-slate-600 dark:text-slate-300" />
-                  )}
-                </Button>
-
                 {/* Settings Button */}
                 <Button
                   isIconOnly
                   variant="flat"
-                  className="hidden sm:flex bg-slate-100 dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 hover:scale-110 transition-all"
+                  className="hidden sm:flex bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:scale-110 transition-all"
                   onPress={handleSettings}
                 >
                   <Settings className="w-5 h-5 text-slate-600 dark:text-slate-300" />
                 </Button>
+
+                {/* Theme Toggle Button */}
+                <div className="w-12">
+                  <ThemeToggle />
+                </div>
 
                 {/* Profile Dropdown */}
                 <Dropdown placement="bottom-end">

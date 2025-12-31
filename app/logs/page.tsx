@@ -139,7 +139,7 @@ export default function LogsPage() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-700 shadow-xl transition-colors duration-300"
+          className="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl transition-colors duration-300"
         >
           <div className="px-8 py-6">
             <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-1">
@@ -157,7 +157,7 @@ export default function LogsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="bg-white/80 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-white/10">
+            <Card className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700">
               <CardBody className="p-6">
                 <div className="mb-6">
                   <Input
@@ -166,11 +166,13 @@ export default function LogsPage() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     variant="bordered"
                     size="lg"
-                    startContent={<Search className="w-4 h-4 text-slate-400" />}
+                    startContent={
+                      <Search className="w-4 h-4 text-slate-400 dark:text-slate-500" />
+                    }
                     classNames={{
                       input: "text-slate-900 dark:text-white",
                       inputWrapper:
-                        "bg-white dark:bg-slate-800/50 border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20",
+                        "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600",
                     }}
                   />
                 </div>
@@ -182,7 +184,7 @@ export default function LogsPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.05 }}
-                      className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-white/5 hover:border-slate-300 dark:hover:border-white/10 transition-all"
+                      className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all"
                     >
                       <div className="w-6 h-6 flex-shrink-0 text-slate-600 dark:text-slate-400">
                         {getLogIcon(log.type)}
@@ -202,7 +204,7 @@ export default function LogsPage() {
                               {log.message}
                             </p>
                           </div>
-                          <span className="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap ml-4">
+                          <span className="text-xs text-slate-500 dark:text-slate-500 whitespace-nowrap ml-4">
                             {log.timestamp}
                           </span>
                         </div>

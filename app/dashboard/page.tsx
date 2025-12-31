@@ -84,10 +84,10 @@ export default function DashboardPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
             {/* Intervention Completion Rate */}
-            <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 shadow-xl dark:shadow-2xl">
+            <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 shadow-xl">
               <CardHeader className="flex flex-col items-start px-4 sm:px-6 pt-4 sm:pt-6 pb-0">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 shadow-lg">
+                  <div className="p-2 rounded-lg bg-linear-to-br from-purple-500 to-pink-500 shadow-lg">
                     <TrendingUp className="w-5 h-5 text-white" />
                   </div>
                   <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
@@ -146,10 +146,10 @@ export default function DashboardPage() {
             </Card>
 
             {/* System Uptime */}
-            <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 shadow-xl dark:shadow-2xl">
+            <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 shadow-xl">
               <CardHeader className="flex flex-col items-start px-4 sm:px-6 pt-4 sm:pt-6 pb-0">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 shadow-lg">
+                  <div className="p-2 rounded-lg bg-linear-to-br from-green-500 to-emerald-500 shadow-lg">
                     <Activity className="w-5 h-5 text-white" />
                   </div>
                   <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
@@ -168,6 +168,7 @@ export default function DashboardPage() {
                         stroke="rgba(148,163,184,0.2)"
                         strokeWidth="12"
                         fill="none"
+                        className="dark:stroke-slate-700"
                       />
                       <circle
                         cx="96"
@@ -209,11 +210,11 @@ export default function DashboardPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
             {/* LLM API Usage */}
-            <Card className="lg:col-span-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 shadow-xl dark:shadow-2xl">
+            <Card className="lg:col-span-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 shadow-xl">
               <CardHeader className="flex flex-col items-start px-4 sm:px-6 pt-4 sm:pt-6 pb-0">
                 <div className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-2 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 shadow-lg">
+                    <div className="p-2 rounded-lg bg-linear-to-br from-blue-500 to-cyan-500 shadow-lg">
                       <Zap className="w-5 h-5 text-white" />
                     </div>
                     <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
@@ -235,9 +236,9 @@ export default function DashboardPage() {
                       key={index}
                       className="flex flex-col items-center gap-2"
                     >
-                      <div className="w-full bg-slate-200 dark:bg-slate-800/50 rounded-lg overflow-hidden h-24 sm:h-32 flex items-end">
+                      <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-lg overflow-hidden h-24 sm:h-32 flex items-end">
                         <div
-                          className="w-full bg-gradient-to-t from-blue-500 to-cyan-500 rounded-t-lg transition-all duration-500 hover:from-blue-400 hover:to-cyan-400"
+                          className="w-full bg-linear-to-t from-blue-500 to-cyan-500 rounded-t-lg transition-all duration-500 hover:from-blue-400 hover:to-cyan-400"
                           style={{ height: `${height}%` }}
                         />
                       </div>
@@ -255,10 +256,10 @@ export default function DashboardPage() {
             </Card>
 
             {/* Recent Activity */}
-            <Card className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-300 shadow-xl dark:shadow-2xl">
+            <Card className="bg-white/90 dark:bg-slate-800/90 backdrop-blur-md border border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 shadow-xl">
               <CardHeader className="flex flex-col items-start px-4 sm:px-6 pt-4 sm:pt-6 pb-0">
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="p-2 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 shadow-lg">
+                  <div className="p-2 rounded-lg bg-linear-to-br from-orange-500 to-red-500 shadow-lg">
                     <Users className="w-5 h-5 text-white" />
                   </div>
                   <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
@@ -271,7 +272,7 @@ export default function DashboardPage() {
                   {recentActivity.map((activity, index) => (
                     <div
                       key={index}
-                      className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-all cursor-pointer border border-transparent dark:border-slate-700/50 hover:border-slate-200 dark:hover:border-slate-600"
+                      className="flex items-start gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-900/50 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-700"
                     >
                       <div
                         className={`w-2 h-2 rounded-full mt-2 ${
